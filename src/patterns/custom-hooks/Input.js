@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useGraphContext } from './useGraphContext';
 import { v4 as uuidv4 } from 'uuid';
 
-function Input({ className }) {
-  const [functStr, setFuncStr] = useState('x, return (x**3);');
-  const { onFuncStrSubmit } = useGraphContext();
+function Input({ className, onFuncStrSubmit }) {
+  const [functStr, setFuncStr] = useState('x, return (Math.sin(x));');
   const idRef = useRef();
 
   const handleChange = ({ target: { value }}) => setFuncStr(value);

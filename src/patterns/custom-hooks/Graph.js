@@ -4,11 +4,10 @@ import Input from './Input';
 import { GraphProvider } from './useGraphContext';
 
 
-function Graph({ children, funcArray, onFuncStrSubmit }) {
+function Graph({ children, funcArray }) {
   
-
   return (
-    <GraphProvider value={{ funcArray, onFuncStrSubmit }}>
+    <GraphProvider value={{ funcArray }}>
       {children}
     </GraphProvider>
   )

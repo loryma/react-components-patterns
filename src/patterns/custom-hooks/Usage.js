@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Graph from './Graph';
 import s from './Usage.module.css';
+import useGraph from './useGraph';
 
 function Usage() {
 
-  const [funcMap, setFuncMap] = useState({});
-  const [funcArray, setFuncArray] = useState([]); 
-
-  const onFuncStrSubmit = (str, id) => {
-    setFuncMap( value => ({...value, [id]: str}));
-  };
-
-  useEffect(() => {
-    const newList = Object.entries(funcMap)
-      .filter(([key, value]) => Boolean(value.trim()))
-      .map(([key, value]) => ({ func: value.split(', ') }));
-    setFuncArray(newList);
-  }, [funcMap, setFuncArray]);
-
+  const { funcArray, onFuncStrSubmit } = useGraph();
+  
   return (
-    <Graph funcArray={funcArray} onFuncStrSubmit={onFuncStrSubmit}>
-      <Graph.Input className={s.inputForm} />
+    <Graph funcArray={funcArray} >
+      <Graph.Input className={s.inputForm} onFuncStrSubmit={onFuncStrSubmit} />
       <Graph.Canvas />
     </Graph>
   )
