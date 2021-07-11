@@ -1,5 +1,4 @@
 import { useState, useEffect, useReducer } from 'react';
-import { useGraphContext } from '../compound-component/useGraphContext';
 
 const internalReducer = ({ funcMap }, { type, payload }) => {
   switch (type) {

@@ -7,7 +7,10 @@ function Input({ className, onFuncStrSubmit }) {
 
   const handleChange = ({ target: { value }}) => setFuncStr(value);
 
-  const handleSubmit = (e) => (e.preventDefault(), onFuncStrSubmit(functStr, idRef.current));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onFuncStrSubmit(functStr, idRef.current);
+  };
 
   useEffect(() => {
     if (!idRef.current) {

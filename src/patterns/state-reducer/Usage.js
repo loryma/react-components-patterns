@@ -16,7 +16,7 @@ function Usage() {
     }
   };
 
-  const { funcArray, onFuncStrSubmit } = useGraph({ initial: {['initial']: 'x, return Math.cos(x);'}}, reducer);
+  const { funcArray, onFuncStrSubmit } = useGraph({ initial: {initial: 'x, return Math.cos(x);'}}, reducer);
   
   return (
     <Graph funcArray={funcArray} >

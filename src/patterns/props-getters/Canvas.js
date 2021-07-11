@@ -14,12 +14,12 @@ function drawGraph (ctx, axes, funcStr, color, thick) {
   ctx.lineWidth = thick;
   ctx.strokeStyle = color;
 
-  const func = Function(...funcStr);
+  const func = Function(...funcStr); /* eslint-disable-line no-new-func */
  
   for (let i = iMin; i <= iMax; i++) {
     xx = dx*i; 
     yy = scale*func(xx/scale);
-    if (i==iMin) {
+    if (i===iMin) {
       ctx.moveTo(x0+xx,y0-yy);
     } 
     else {

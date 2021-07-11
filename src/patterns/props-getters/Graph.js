@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Canvas from './Canvas';
 import Input from './Input';
 import { GraphProvider } from './useGraphContext';
