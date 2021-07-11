@@ -3,7 +3,7 @@ import { useGraphContext } from './useGraphContext';
 import { v4 as uuidv4 } from 'uuid';
 
 function Input({ className }) {
-  const [functStr, setFuncStr] = useState('x, return (x**2);');
+  const [functStr, setFuncStr] = useState('x, return (x**3);');
   const { onFuncStrSubmit } = useGraphContext();
   const idRef = useRef();
 
