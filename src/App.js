@@ -3,6 +3,7 @@ import CompoundComponents from './patterns/compound-component/Usage';
 import ControlledComponent from './patterns/controlled-component/Usage';
 import CustomHooks from './patterns/custom-hooks/Usage';
 import PropsGetters from './patterns/props-getters/Usage';
+import StateReducer from './patterns/state-reducer/Usage';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <CustomHooks />
       <h1>Props getters</h1>
       <PropsGetters />
+      <h1>State reducer</h1>
+      <StateReducer />
     </div>
   );
 }
