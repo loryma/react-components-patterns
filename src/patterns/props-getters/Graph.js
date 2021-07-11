@@ -4,7 +4,9 @@ import Input from './Input';
 import { GraphProvider } from './useGraphContext';
 
 
-function Graph({ children, funcArray }) {
+function Graph({ children, funcArray, ...otherProps }) {
+
+  console.log(funcArray);
   
   return (
     <GraphProvider value={{ funcArray }}>

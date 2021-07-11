@@ -2,6 +2,7 @@ import './App.css';
 import CompoundComponents from './patterns/compound-component/Usage';
 import ControlledComponent from './patterns/controlled-component/Usage';
 import CustomHooks from './patterns/custom-hooks/Usage';
+import PropsGetters from './patterns/props-getters/Usage';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <ControlledComponent />
       <h1>Custom hooks</h1>
       <CustomHooks />
+      <h1>Props getters</h1>
+      <PropsGetters />
     </div>
   );
 }

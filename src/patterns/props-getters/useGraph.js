@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 
+const callFnsInSeq = (...fns) => (...arg) => {
+  fns.forEach(fn => fn && fn(...arg));
+}
+
 function useGraph() {
   const [funcMap, setFuncMap] = useState({});
   const [funcArray, setFuncArray] = useState([]); 
@@ -8,6 +12,15 @@ function useGraph() {
     setFuncMap( value => ({...value, [id]: str}));
   };
 
+  const getGraphProps = () => ({
+    funcArray,
+  });
+
+  const getInputProps = ({ onSubmit, ...props }) => ({
+    onFuncStrSubmit: callFnsInSeq(onFuncStrSubmit, onSubmit),
+    ...props,
+  })
+
   useEffect(() => {
     const newList = Object.entries(funcMap)
       .filter(([key, value]) => Boolean(value.trim()))
@@ -15,7 +28,7 @@ function useGraph() {
     setFuncArray(newList);
   }, [funcMap, setFuncArray]);
 
-  return { funcArray, onFuncStrSubmit };
+  return { funcArray, onFuncStrSubmit, getGraphProps, getInputProps };
 };
 
 export default useGraph;

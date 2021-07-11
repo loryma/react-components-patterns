@@ -5,11 +5,13 @@ import useGraph from './useGraph';
 
 function Usage() {
 
-  const { funcArray, onFuncStrSubmit } = useGraph();
+  const { getGraphProps, getInputProps } = useGraph();
+
+  const onSubmit = (str) => console.log(`New funct string was submitted`, str);
   
   return (
-    <Graph funcArray={funcArray} >
-      <Graph.Input className={s.inputForm} onFuncStrSubmit={onFuncStrSubmit} />
+    <Graph { ...getGraphProps() } >
+      <Graph.Input className={s.inputForm} { ...getInputProps({ onSubmit }) } />
       <Graph.Canvas />
     </Graph>
   )
